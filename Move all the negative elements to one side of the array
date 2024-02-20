@@ -1,0 +1,24 @@
+// Move all the negative elements to one side of the array
+let ar = [-15,12,45,-56,-4,34,-12];
+// using sort method
+function moveNegEnd(arr){
+    let ar = arr.sort(function(a,b) { return b-a})
+    console.log(ar)
+}
+
+moveNegEnd(ar);
+// without sort method and without sorting
+// take another array of same length and start inserting form both end
+function moveNegEnd1(arr){
+    let aa = [];
+    aa.length = arr.length;
+    let a=0, b=arr.length-1;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]<0) {aa[b]=arr[i]; b++;}
+        else {aa[a] = arr[i]; a++}
+    }
+    console.log(aa)
+    
+}
+
+moveNegEnd1(ar);
