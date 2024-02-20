@@ -18,7 +18,8 @@ function sortArray(arr){
     console.log(ar)
 }
 sortArray(ar);
-// optimization 1
+// optimization 1  ==> sort an array and print.
+// optimizatoin 2  ==>  Count the no of zero's, one's and two's element and print in loop.
 
 function sortArrayOpt1(let arr){
     
