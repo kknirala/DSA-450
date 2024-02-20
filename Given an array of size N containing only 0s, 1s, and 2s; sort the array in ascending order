@@ -1,0 +1,29 @@
+// Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo
+// or Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
+
+let ar = [1,0,1,2,1,0,1,0,2];
+// output: [0,0,0,1,1,1,1,2,2];
+// let newAr = [];
+// time complixity o(n square)
+function sortArray(arr){
+    for(let i=0;i<ar.length;i++){
+        for(let j=0;j<ar.length;j++){
+            if(ar[i]<ar[j]){
+                let temp = ar[i];
+                ar[i]=ar[j];
+                ar[j]=temp;
+            }
+        }
+    }
+    console.log(ar)
+}
+sortArray(ar);
+// optimization 1
+
+function sortArrayOpt1(let arr){
+    
+}
+sortArrayOpt1(ar){
+    
+}
+// console.log(ar)
