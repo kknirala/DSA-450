@@ -25,11 +25,12 @@ moveNegEnd1(ar);
 
 // 	Move all the negative elements to one side of the array using first and last poiner.
 
-let arr = [-15,12,45,-56,-4,34,-12];
+
+let arr = [-15,12,45,-56,-4,34,-12,0];
  function moveNegLast(ar){
  let lastN =0, lastP = ar.length-1;
      while(lastN<=lastP){
-         if(ar[lastN]<0 && ar[lastP]>0){
+         if(ar[lastN]<0 && ar[lastP]>=0){
              let temp = ar[lastN];
              ar[lastN]=ar[lastP];
              ar[lastP]=temp;
@@ -46,4 +47,5 @@ let arr = [-15,12,45,-56,-4,34,-12];
      console.log(ar);
  }
  moveNegLast(arr);
+
 
