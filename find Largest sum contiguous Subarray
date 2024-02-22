@@ -1,0 +1,20 @@
+// find Largest sum contiguous Subarray [V. IMP]
+let arr = [-15,12,45,-56,-4,34,-12,0];
+// 32,34,55,-10,56,2,3,4,5, -1,23,54,-4,99,-2,-3,-123
+// 2,3,4,5,-15,-20,234,10,25,56
+// 1st apprach, 
+function largestSum(){
+    let sum = 0;
+    let sum_till_now = Number.MIN_VALUE;
+    let i =0;
+    // while(arr[i]<0) i++;
+    for(;i<arr.length;i++){
+        sum = sum + arr[i];
+        if(sum_till_now<sum)
+            sum_till_now = sum;
+        if(sum<0)
+            sum = 0
+    }
+    console.log(sum_till_now);
+}
+largestSum();
