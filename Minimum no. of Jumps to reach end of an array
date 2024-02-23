@@ -1,0 +1,30 @@
+// Minimum no. of Jumps to reach end of an array
+/**
+ Description:- 1st Step: 1st value of array is 1, so jump only one step, and reached to 2 position of array, which value is 4,
+   at 2nd position, value is 4, so it can jump upto 4th position for 2nd, after jumping max distance, it will reach to 6th position of array.
+**/
+let arr = [1,4,3,2,6,7];
+let totalJump = 0;
+let i = 1;
+
+function minJump(){
+while(i<arr.length){
+    if(arr[i]==0){
+        console.log(`can not move, as value is given at ${i} th position`);
+        return;
+    }
+    else{
+        if(arr[i]+i < arr.length){
+            i = arr[i]+i;
+            ++totalJump;
+        }
+        else
+        {
+            ++totalJump;
+             i = arr.length+1;
+        }
+    }
+}
+console.log("Minimum Jump:- ",totalJump);
+}
+minJump();
