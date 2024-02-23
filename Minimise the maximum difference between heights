@@ -1,0 +1,24 @@
+// Minimise the maximum difference between heights
+let arr = [1,5,15,10];
+k = 3;
+let arr1  =[];
+arr1.length=arr.length;
+let avg = 0, avgSum=0;
+for(let i=0;i<arr.length;i++) 
+    avgSum += arr[i]
+avg = Math.ceil(avgSum/arr.length);
+
+
+arr = arr.sort(function(a,b) {return a-b;});
+for(let i=0;i<arr.length;i++){
+    if(arr[i]<=k || arr[i]<avg) arr1.push(arr[i]+k);
+    else arr1.push(arr[i]-k)
+}
+let min = Number.MAX_VALUE, max = Number.MIN_VALUE;
+for(let i=0;i<arr1.length;i++){
+    if(arr1[i]<min)
+        min=arr1[i]
+    else if(arr1[i]>max)
+        max=arr1[i]
+}
+console.log("Max difference:->", max-min);
