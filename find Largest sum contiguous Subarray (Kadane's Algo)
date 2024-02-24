@@ -1,4 +1,4 @@
-// // find Largest sum contiguous Subarray [V. IMP]
+// find Largest sum contiguous Subarray (Kadane's Algo)
 // let arr = [-1,-2,-3,-4];
 // let arr = [1,2,3,-2,5];
 let arr = [-15,12,45,-56,-4,34,-12,0];
