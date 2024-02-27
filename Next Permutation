@@ -1,0 +1,52 @@
+// A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+//For example, for arr = [1,2,3], the following are all the permutations of arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1].
+// my understanding --> next greater number of merged array value -> ex: [1,2,3] , next greater number after 123 is 132.  -> [1,3,2],
+// if last no is greater than 2nd last, then swap.
+// if last no is less than 2nd last, then 
+// 1,3,2 => 2,1,3
+// 3,1,2  ==> 3,2,1
+// 3,2,1 ==> it's greater
+// 4,5,6,7,8 = > 4,5,6,8,7
+// let arr = [1,2,3];
+// let arr = [1,3,2];
+// let arr = [3,1,2];
+// let arr = [3,2,1];
+// let arr = [4,5,6,7,8];
+// let arr = [1,2,3,5,4,6];
+// let arr = [6,5,4,3,2,1];
+let arr = [6,5,4,3,1,2];
+
+function nextPermutation(){
+    let j = i = arr.length-1;
+    let k = arr.length-2;
+    // console.log(i,j,k);
+    while(i>0){
+        if(arr[arr.length-1]>arr[arr.length-2]){
+            let temp = arr[arr.length-1];
+            arr[arr.length-1]=arr[arr.length-2];
+            arr[arr.length-2] = temp;
+            console.log("Next Permutation is:-> for fixed end ", arr);
+            return;
+        }
+        else {
+            if(arr[j]< arr[k]){
+                k--;
+            }
+            else{
+                let temp = arr[j];
+                arr[j]=arr[k];
+                arr[k]=temp;
+                console.log("Next Permutation is:->", arr);
+            return;
+            }
+        }
+        i--;
+    }
+    // if given array is max permutation, then just reverse.
+    if(i==0){
+        arr=arr.sort(function(a,b){return a-b})
+        console.log("Next Permutation is:-> ", arr);
+    }
+}
+nextPermutation();
