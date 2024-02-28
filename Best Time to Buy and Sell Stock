@@ -11,13 +11,15 @@
 // Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
 // my explanation:-> find the index of min value in array, and then find the greatest number after the losted value index.
-// let arr = [7,1,5,3,6,4];
-let arr = [7,6,4,3,1];
-let lowerIndex = -1;
-let lowerValue = arr[0];
-let maxVal = Number.MIN_VALUE;
+
 
 function maxProfit(){
+    let arr = [7,1,5,3,6,4];
+    // let arr = [7,6,4,3,1];
+    let lowerIndex = -1;
+    let lowerValue = arr[0];
+    let maxVal = Number.MIN_VALUE;
+
    for(let i=1;i<arr.length;i++){
        if(lowerValue>arr[i]) 
        {
@@ -31,3 +33,21 @@ function maxProfit(){
    console.log("Profit:-> ",maxVal-arr[lowerIndex]);
 }
 maxProfit();
+
+// -----------------------------
+function maxProfit1(){
+    let arr = [7,1,5,3,6,4];
+    // let arr = [7,6,4,3,1];
+    let max_profit = 0;
+    let buyingPrice = arr[0];
+    for(let i=1;i<arr.length;i++){
+        if(buyingPrice>arr[i]){
+            buyingPrice =arr[i];
+        }
+        else if(arr[i]-buyingPrice>max_profit)
+            max_profit=arr[i]-buyingPrice
+    }
+    
+   console.log("Max Profit:-> ",max_profit);
+}
+maxProfit1();
