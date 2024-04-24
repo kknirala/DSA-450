@@ -1,0 +1,28 @@
+// Maximum Product Subarray
+// Given an array Arr[] that contains N integers (may be positive, negative or zero). Find the product of the maximum product subarray.
+
+// let arr = [6,-3,-10,0,2];
+let arr = [2,3,-2,4];
+// let arr = [-2,0,-1];
+// let arr = [-1, -3, -10, 0, 60];
+// let arr = [ 1, -2, -3, 0, 7, -8, -2];
+let tmaxp=1;
+let maxp=0;
+
+if(arr.length==1){
+    maxp=arr[0];
+}
+else{
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==0 || arr[i]==1 || arr[i]==-1){
+           if(tmaxp>maxp) maxp=tmaxp; 
+           tmaxp=1;
+        }
+        else{
+            tmaxp=Math.abs(arr[i])*tmaxp;
+        }
+    }
+     if(tmaxp>maxp) maxp=tmaxp; 
+}
+
+console.log("Maximum Product Subarray-> ",maxp)
